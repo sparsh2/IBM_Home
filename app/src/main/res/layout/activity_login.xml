@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@color/light"
+    android:gravity="center"
+    android:paddingLeft="64dp"
+    android:paddingRight="64dp">
+
+
+    <EditText
+        android:id="@+id/text_input_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/custom_edit_text_login"
+        android:drawableLeft="@drawable/ic_username"
+        android:gravity="center"
+        android:hint="Username"
+        android:inputType="text"
+        android:paddingRight="5dp" />
+
+    <EditText
+        android:id="@+id/text_input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edit_text_login"
+        android:drawableLeft="@drawable/ic_password"
+        android:hint="Password"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:inputType="textPassword"
+        android:paddingRight="5dp"
+        android:gravity="center"/>
+
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_login"
+        android:layout_marginTop="30dp"
+        android:text="Login"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:onClick="confirmInput"/>
+
+    <Button
+        android:id="@+id/RegisterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button_login"
+        android:layout_marginTop="50dp"
+        android:text="Register here"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:padding="8dp"/>
+
+</LinearLayout>

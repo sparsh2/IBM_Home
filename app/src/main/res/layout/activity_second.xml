@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity"
+    android:background="@color/light"
+    android:gravity="center"
+    android:paddingRight="64dp"
+    android:paddingLeft="64dp"
+    android:orientation="vertical">
+
+
+
+            <EditText
+                android:id="@+id/text_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_login"
+                android:drawableLeft="@drawable/ic_email"
+                android:hint="Enter Email"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/text_input_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_login"
+                android:drawableLeft="@drawable/ic_username"
+                android:hint="Enter Username"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:inputType="text"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/text_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_login"
+                android:drawableLeft="@drawable/ic_password"
+                android:hint="Enter Password"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/text_input_repassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_login"
+                android:drawableLeft="@drawable/ic_password"
+                android:hint="Re-enter Password"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/text_input_modelno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_edit_text_login"
+                android:drawableLeft="@drawable/ic_model"
+                android:hint="Enter Model-number"
+                android:gravity="center"
+                android:paddingRight="5dp"
+                android:inputType="text"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textAllCaps="true"/>
+
+            <Button
+                android:id="@id/RegisterButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_button_login"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textAllCaps="false"
+                android:text="Register"
+                android:textSize="24dp"
+                />
+
+
+
+
+
+</LinearLayout>

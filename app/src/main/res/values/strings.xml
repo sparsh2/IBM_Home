@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string-array name="range_selector">
+
+        <item>Yearly</item>
+        <item>Monthly</item>
+        <item>Weekly</item>
+        <item>Daily</item>
+
+    </string-array>
+</resources>
