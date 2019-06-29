@@ -53,6 +53,7 @@ public class Demo extends AppCompatActivity {
                     Toast.makeText(Demo.this, "Not Connected", Toast.LENGTH_LONG).show();
 
                     textView.setText("Failed to Connect!!");
+                    exception.printStackTrace();
 
                 }
             });
