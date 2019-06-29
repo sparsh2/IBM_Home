@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        Intent intent = new Intent(LoginActivity.this, Air.class);
+        Intent intent = new Intent(LoginActivity.this, AirActivity.class);
         LoginActivity.this.startActivity(intent);
     }
 }
