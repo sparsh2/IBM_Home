@@ -20,10 +20,13 @@ public class PahoMqttClient {
     private MqttAndroidClient mqttAndroidClient;
 
     public MqttAndroidClient getMqttClient(Context context, String brokerUrl, String clientId) {
+        MqttConnectOptions options = new MqttConnectOptions();
+        options.setUserName(Constants.API_KEY);
+        options.setPassword(Constants.AUTHORIZATION_TOKEN.toCharArray());
 
         mqttAndroidClient = new MqttAndroidClient(context, brokerUrl, clientId);
         try {
-            IMqttToken token = mqttAndroidClient.connect(getMqttConnectionOption());
+            IMqttToken token = mqttAndroidClient.connect(options);
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {

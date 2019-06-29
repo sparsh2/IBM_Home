@@ -2,7 +2,7 @@ package com.example.myapplication;
 
 public class Constants {
 
-    public static final String MQTT_BROKER_URL = "djwe4w.internetofthings.ibmcloud.com";
+    public static final String MQTT_BROKER_URL = "tcp://djwe4w.internetofthings.ibmcloud.com";
 
     public static final String PUBLISH_TOPIC = "iot-2/evt/status/fmt/json";
 

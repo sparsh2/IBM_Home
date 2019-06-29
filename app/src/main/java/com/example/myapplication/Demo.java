@@ -52,7 +52,7 @@ public class Demo extends AppCompatActivity {
                     Log.d("MQTT", "onFailure of mqqt establish 2.");
                     Toast.makeText(Demo.this, "Not Connected", Toast.LENGTH_LONG).show();
 
-                    textView.setText("Failed to Connected!!");
+                    textView.setText("Failed to Connect!!");
 
                 }
             });
@@ -68,7 +68,12 @@ public class Demo extends AppCompatActivity {
 
         textView = findViewById(R.id.textview);
 
+//        PahoMqttClient newConnection = new PahoMqttClient();
+//        MqttAndroidClient androidClient = newConnection.getMqttClient(this.getApplicationContext(),
+//                Constants.MQTT_BROKER_URL, Constants.CLIENT_ID);
+
         establishMQTTconnection2();
+
 
     }
 }
