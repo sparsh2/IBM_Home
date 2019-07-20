@@ -171,6 +171,18 @@
         </GridLayout>
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:text="Connecting..."
+            android:layout_marginTop="150dp"
+            android:id="@+id/textview"/>
+
+
     </LinearLayout>
 
 </ScrollView>

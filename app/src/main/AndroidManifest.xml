@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".Air" />
+        <!--<activity android:name=".Air" />-->
         <activity android:name=".SecondActivity" />
     </application>
 

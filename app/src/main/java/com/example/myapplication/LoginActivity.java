@@ -13,11 +13,15 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private EditText textInputUsername;
     private EditText textInputPassword;
+    String username = "ibm";
+    String password = "ibmiot";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+
+
 
 
         registerButton = (Button) findViewById(R.id.RegisterButton);
@@ -25,8 +29,23 @@ public class LoginActivity extends AppCompatActivity {
         textInputUsername = findViewById(R.id.text_input_username);
         textInputPassword = findViewById(R.id.text_input_password);
 
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+
+//                if(!validatePassword() | !validateUsername() )
+//                {
+//                    return;
+//                }
+
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                LoginActivity.this.startActivity(intent);
+            }
+        });
+
         registerButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+
+
                 Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
                 LoginActivity.this.startActivity(intent);
             }
@@ -44,9 +63,8 @@ public class LoginActivity extends AppCompatActivity {
             textInputUsername.setError("Field can't be empty");
             return false;
         }
-        else if(usernameInput.length() > 15)
-        {
-            textInputUsername.setError("Username too long");
+        if(textInputUsername.getText().toString()!=username){
+            textInputPassword.setError("Wrong username or password!");
             return false;
         }
         else
@@ -57,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validatePassword(){
-        String passwordInput = textInputPassword.getText().toString().trim();
+        String passwordInput = textInputPassword.getText().toString();
 
         if(passwordInput.isEmpty())
         {
@@ -66,18 +84,22 @@ public class LoginActivity extends AppCompatActivity {
         }
         else
         {
+            if(passwordInput!=password){
+                textInputPassword.setError("Wrong username or password!");
+                return false;
+            }
             textInputPassword.setError(null);
             return true;
         }
     }
 
     public void confirmInput(View view) {
-        if(!validatePassword() | !validateUsername())
+        if(!validatePassword() | !validateUsername() )
         {
             return;
         }
 
-        Intent intent = new Intent(LoginActivity.this, AirActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         LoginActivity.this.startActivity(intent);
     }
 }

@@ -131,7 +131,7 @@ public class Demo extends AppCompatActivity {
                     // We are connected
                     Log.d("MQTT", "onSuccess of mqqt establish.");
                     Toast.makeText(Demo.this, "Connected", Toast.LENGTH_LONG).show();
-                    String str = "Successfully Connected";
+                    String str = "Connected";
                     textView.setText(str);
 
                 }
