@@ -11,6 +11,32 @@
     android:paddingLeft="64dp"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="IBM Home"
+            android:textAllCaps="false"
+            android:textSize="50dp"
+            android:textColor="@color/darker" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_home"/>
+
+
+
+    </LinearLayout>
+
 
 
             <EditText

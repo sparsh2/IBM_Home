@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">IBM Home</string>
 
     <string-array name="range_selector">
 
