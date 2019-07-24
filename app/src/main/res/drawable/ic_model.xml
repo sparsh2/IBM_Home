@@ -9,6 +9,8 @@
             <corners android:bottomLeftRadius="4dp"
                 android:topLeftRadius="4dp"/>
 
+            <stroke android:color="@color/darker" android:width="2dp" />
+
         </shape>
     </item>
 

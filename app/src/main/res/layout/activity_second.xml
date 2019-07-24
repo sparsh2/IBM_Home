@@ -88,6 +88,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textAllCaps="false"
+                android:textColor="@color/darker"
                 android:text="Register"
                 android:textSize="24dp"
                 />
