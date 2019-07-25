@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:background="@color/light"
+    android:background="@color/primaryColor"
     android:gravity="center"
     android:paddingLeft="64dp"
     android:paddingRight="64dp">
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginBottom="20dp"
-        android:paddingBottom="40dp">
+        android:paddingBottom="30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
             android:text="IBM Home"
             android:textAllCaps="false"
             android:textSize="50dp"
-            android:textColor="@color/darker" />
+            android:textColor="@color/secondaryColor" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="@color/darker"
+            android:textColor="@color/secondaryColor"
             android:textSize="30dp"/>
 
     </LinearLayout>
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button_login"
         android:layout_marginTop="30dp"
-        android:textColor="@color/darker"
+        android:textColor="@color/secondaryTextColor"
         android:text="Login"
         android:textSize="20dp"
         android:textAllCaps="false"/>
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button_login"
         android:layout_marginTop="50dp"
-        android:textColor="@color/darker"
+        android:textColor="@color/secondaryTextColor"
         android:text="Register here"
         android:textSize="20dp"
         android:textAllCaps="false"
