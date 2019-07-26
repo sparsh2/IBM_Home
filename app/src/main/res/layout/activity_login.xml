@@ -6,11 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
-    android:background="@color/light"
+    android:background="@color/primaryColor"
     android:gravity="center"
     android:paddingLeft="64dp"
     android:paddingRight="64dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="IBM Home"
+            android:textAllCaps="false"
+            android:textSize="50dp"
+            android:textColor="@color/secondaryColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_home"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/secondaryColor"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/text_input_username"
@@ -45,6 +85,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button_login"
         android:layout_marginTop="30dp"
+        android:textColor="@color/secondaryTextColor"
         android:text="Login"
         android:textSize="20dp"
         android:textAllCaps="false"/>
@@ -55,6 +96,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button_login"
         android:layout_marginTop="50dp"
+        android:textColor="@color/secondaryTextColor"
         android:text="Register here"
         android:textSize="20dp"
         android:textAllCaps="false"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".EnergyActivity"
     android:orientation="vertical"
-    android:background="@color/light"
+    android:background="@color/primaryColor"
     android:paddingTop="80dp">
 
     <HorizontalScrollView

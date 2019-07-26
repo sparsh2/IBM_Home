@@ -5,11 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
-    android:background="@color/light"
+    android:background="@color/primaryColor"
     android:gravity="center"
     android:paddingRight="64dp"
     android:paddingLeft="64dp"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="IBM Home"
+            android:textAllCaps="false"
+            android:textSize="50dp"
+            android:textColor="@color/primaryTextColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/ic_home"/>
+
+
+
+    </LinearLayout>
 
 
 
@@ -88,6 +114,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:textAllCaps="false"
+                android:textColor="@color/secondaryTextColor"
                 android:text="Register"
                 android:textSize="24dp"
                 />
