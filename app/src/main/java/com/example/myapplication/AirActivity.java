@@ -7,41 +7,31 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
+
 
 public class AirActivity extends AppCompatActivity {
 
-    TextView reportView;
-    int flag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_air2);
-        flag=0;
 
-        reportView = findViewById(R.id.detailedReport);
+        GraphView  graph = (GraphView) findViewById(R.id.myGraph);
+        LineGraphSeries <DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[]{
+                new DataPoint(0,1),
+                new DataPoint(1,5),
+                new DataPoint(2,3),
+                new DataPoint(3,2)
+        });
+        graph.addSeries(series);
 
-        Spinner graphSpinner = (Spinner) findViewById(R.id.select);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(AirActivity.this, android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.range_selector));
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        graphSpinner.setAdapter(adapter);
     }
 
 
-    public void detailedReport(View v){
-        String str = reportView.getText().toString();
-        if(flag==0) {
-            str += "\n O2% = \nCO2% = ";
-            reportView.setText(str);
-            flag=1;
-        } else{
-            str = "Detailed Report";
-            reportView.setText(str);
-            flag=0;
-        }
-    }
+
 }

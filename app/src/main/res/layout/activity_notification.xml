@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AirActivity"
     android:orientation="vertical"
-    android:background="@color/primaryColor">
+    tools:context=".HomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:padding="15dp"
         android:background="@color/secondaryDarkColor">
 
         <LinearLayout
@@ -54,10 +53,56 @@
 
     </LinearLayout>
 
-    <com.jjoe64.graphview.GraphView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/myGraph"/>
+        android:layout_height="wrap_content"
+        android:background="@color/primaryLightColor"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Home"
+                android:textAlignment="center"
+                android:textColor="@color/primaryTextColor"
+                android:background="@drawable/custom_button_unselected" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Notifications"
+                android:textAlignment="center"
+                android:textColor="@color/primaryTextColor"
+                android:background="@drawable/custom_button_selected"
+                android:padding="10dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/secondaryColor"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>
