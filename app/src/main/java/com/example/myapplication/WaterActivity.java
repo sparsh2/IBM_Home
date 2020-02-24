@@ -29,6 +29,26 @@ public class WaterActivity extends AppCompatActivity {
 
     MqttAndroidClient Appclient;
 
+    public void subscribeToTopic(){
+        try {
+            Appclient.subscribe(Constants.APP_SUBSCRIBE_TOPIC, 0, null, new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    addToHistory("Subscribed!");
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    addToHistory("Failed to subscribe");
+                }
+            });
+
+        } catch (MqttException ex){
+            System.err.println("Exception whilst subscribing");
+            ex.printStackTrace();
+        }
+    }
+
     private void addToHistory(String mainText){
         System.out.println("LOG: " + mainText);
     }
@@ -46,8 +66,8 @@ public class WaterActivity extends AppCompatActivity {
 
 
 
-        options.setUserName(Constants.USERNAME);
-        options.setPassword(Constants.AUTHORIZATION_TOKEN.toCharArray());
+        options.setUserName(Constants.API_KEY);
+        options.setPassword(Constants.APP_AUTHORIZATION_TOKEN.toCharArray());
 
 
         Appclient.setCallback(new MqttCallbackExtended() {
@@ -79,6 +99,9 @@ public class WaterActivity extends AppCompatActivity {
             @Override
             public void messageArrived(String s, MqttMessage mqttMessage) throws Exception {
                 addToHistory("Incoming message: " + new String(mqttMessage.getPayload()));
+//                Appclient.publish(Constants.APP_PUBLISH_TOPIC, mqttMessage);
+                addToHistory(mqttMessage.toString());
+//                addToHistory(s);
             }
 
             @Override
@@ -90,15 +113,15 @@ public class WaterActivity extends AppCompatActivity {
 
 
         try {
-            IMqttToken token = Applient.connect(options);
+            IMqttToken token = Appclient.connect(options);
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
                     // We are connected
                     Log.d("MQTT", "onSuccess of mqqt establish.");
 //                    Toast.makeText(HomeActivity.this, "Connected", Toast.LENGTH_LONG).show();
-                    String str = "Live";
-                    textView.setText(str);
+//                    String str = "Live";
+//                    textView.setText(str);
 
                 }
 
@@ -109,7 +132,7 @@ public class WaterActivity extends AppCompatActivity {
                     Log.d("MQTT", "onFailure of mqqt establish 2.");
 //                    Toast.makeText(HomeActivity.this, "Not Connected", Toast.LENGTH_LONG).show();
 
-                    textView.setText("Offline");
+//                    textView.setText("Offline");
                     exception.printStackTrace();
 
                 }
@@ -124,7 +147,6 @@ public class WaterActivity extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,7 +154,8 @@ public class WaterActivity extends AppCompatActivity {
 
         flag=0;
 
-        reportView = findViewById(R.id.detailedReport);
+//        reportView = findViewById(R.id.detailedReport);
+        textView = findViewById(R.id.detailedReport);
 
         Spinner graphSpinner = (Spinner) findViewById(R.id.select);
 
@@ -142,6 +165,8 @@ public class WaterActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         graphSpinner.setAdapter(adapter);
+
+        establishMQTTconnection2();
 
     }
 

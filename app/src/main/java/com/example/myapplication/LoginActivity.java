@@ -45,7 +45,6 @@ public class LoginActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
 
-
                 Intent intent = new Intent(LoginActivity.this, SecondActivity.class);
                 LoginActivity.this.startActivity(intent);
             }

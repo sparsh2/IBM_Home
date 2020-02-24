@@ -33,7 +33,7 @@ public class Demo extends AppCompatActivity {
 
     public void subscribeToTopic(){
         try {
-            client.subscribe(Constants.SUBSCRIBE_TOPIC, 0, null, new IMqttActionListener() {
+            client.subscribe(Constants.DEVICE_SUBSCRIBE_TOPIC, 0, null, new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
                     addToHistory("Subscribed!");
@@ -61,7 +61,7 @@ public class Demo extends AppCompatActivity {
                 publishMessage = "Hello world!!";
             }
             message.setPayload(publishMessage.getBytes());
-            client.publish(Constants.PUBLISH_TOPIC, message);
+            client.publish(Constants.DEVICE_PUBLISH_TOPIC, message);
             addToHistory("Message Published");
             if(!client.isConnected()){
                 addToHistory(client.getBufferedMessageCount() + " messages in buffer.");
@@ -77,7 +77,7 @@ public class Demo extends AppCompatActivity {
 //        String clientId = MqttClient.generateClientId();
 
         client = new MqttAndroidClient(this.getApplicationContext(), Constants.MQTT_BROKER_URL,
-                        Constants.CLIENT_ID);
+                        Constants.DEVICE_CLIENT_ID);
 
         MqttConnectOptions options = new MqttConnectOptions();
         options.setAutomaticReconnect(true);
@@ -86,7 +86,7 @@ public class Demo extends AppCompatActivity {
 
 
         options.setUserName(Constants.API_KEY);
-        options.setPassword(Constants.AUTHORIZATION_TOKEN.toCharArray());
+        options.setPassword(Constants.DEVICE_AUTHORIZATION_TOKEN.toCharArray());
 
 
         client.setCallback(new MqttCallbackExtended() {

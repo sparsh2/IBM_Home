@@ -22,7 +22,7 @@ public class PahoMqttClient {
     public MqttAndroidClient getMqttClient(Context context, String brokerUrl, String clientId) {
         MqttConnectOptions options = new MqttConnectOptions();
         options.setUserName(Constants.API_KEY);
-        options.setPassword(Constants.AUTHORIZATION_TOKEN.toCharArray());
+        options.setPassword(Constants.APP_AUTHORIZATION_TOKEN.toCharArray());
 
         mqttAndroidClient = new MqttAndroidClient(context, brokerUrl, clientId);
         try {
@@ -76,9 +76,9 @@ public class PahoMqttClient {
         MqttConnectOptions mqttConnectOptions = new MqttConnectOptions();
         mqttConnectOptions.setCleanSession(false);
         mqttConnectOptions.setAutomaticReconnect(true);
-        mqttConnectOptions.setWill(Constants.PUBLISH_TOPIC, "I am going offline".getBytes(), 1, true);
+        mqttConnectOptions.setWill(Constants.APP_PUBLISH_TOPIC, "I am going offline".getBytes(), 1, true);
         mqttConnectOptions.setUserName(Constants.API_KEY);
-        mqttConnectOptions.setPassword(Constants.AUTHORIZATION_TOKEN.toCharArray());
+        mqttConnectOptions.setPassword(Constants.APP_AUTHORIZATION_TOKEN.toCharArray());
         return mqttConnectOptions;
     }
 
